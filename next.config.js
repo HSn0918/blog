@@ -8,6 +8,10 @@ const nextConfig = {
   experimental: {
     missingSuspenseWithCSRBailout: false,
   },
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
   // Optionally, add any other Next.js config below
 }
 
