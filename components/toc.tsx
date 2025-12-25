@@ -43,7 +43,7 @@ const Toc = ({toc}: any) => {
                 })
                 :
                 <div className={'text-sm text-gray-500 p-4'}>
-                    No table of contents.
+                    暂无目录。
                 </div>
             }
         </div>

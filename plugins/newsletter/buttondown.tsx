@@ -18,10 +18,10 @@ const ButtonDown = () => {
                 <Input
                     className={"min-w-72 mb-4 mr-0 md:mb-0 md:mr-4"}
                     type="email"
-                    placeholder="Subscribe via email"
+                    placeholder="通过邮箱订阅"
                     name=" email"
                 />
-                <Button className={" w-full md:w-fit"} type="submit" value=" Subscribe">Subscribe</Button>
+                <Button className={" w-full md:w-fit"} type="submit" value="订阅">订阅</Button>
             </div>
         </form>
     )

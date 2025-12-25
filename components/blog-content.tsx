@@ -62,7 +62,7 @@ const BlogContent = ({posts}: any) => {
                             </Link>
                             {post.pinned && (
                                 <Badge className={'li'}>
-                                    Pinned
+                                    置顶
                                 </Badge>
                             )}
                         </CardTitle>
@@ -87,7 +87,7 @@ const BlogContent = ({posts}: any) => {
                     <div className={'flex justify-end'}>
                         <Link href={`/blog/${post.id}`}>
                             <Button>
-                                Read More <ArrowRight size={16} className={'ml-2'}/>
+                                阅读全文 <ArrowRight size={16} className={'ml-2'}/>
                             </Button>
                         </Link>
                     </div>

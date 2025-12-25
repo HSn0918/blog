@@ -59,6 +59,7 @@ export default async function Post({params}: any) {
     const {slug} = params
     const post: any = await getPost(slug)
     if (!post || post?.draft) notFound()
+    const readMinutes = Math.max(1, Math.ceil(post.stats.minutes))
 
     return (
         <div className={"w-full flex justify-center"}>
@@ -70,15 +71,15 @@ export default async function Post({params}: any) {
                             <SideNav/>
                         </div>
                         <Drawer>
-                            <DrawerTrigger>
-                                <Button size={"icon"} variant={"ghost"}>
-                                    <TableProperties size={20}/>
-                                </Button>
-                            </DrawerTrigger>
+                        <DrawerTrigger asChild>
+                            <Button size={"icon"} variant={"ghost"}>
+                                <TableProperties size={20}/>
+                            </Button>
+                        </DrawerTrigger>
                             <DrawerContent>
                                 <DrawerHeader>
                                     <DrawerTitle>
-                                        Table of contents
+                                        目录
                                     </DrawerTitle>
                                 </DrawerHeader>
                                 <Toc toc={post.toc}/>
@@ -96,7 +97,7 @@ export default async function Post({params}: any) {
                         <div className={'absolute -right-8 translate-x-full'}>
                             <div className={'w-full h-full max-h-[80vh] overflow-auto'}>
                                 <div className={'text-base font-bold mb-2'}>
-                                    Table of contents
+                                    目录
                                 </div>
                                 <Toc toc={post.toc}/>
                             </div>
@@ -104,9 +105,9 @@ export default async function Post({params}: any) {
                     </div>
                     <article>
                         <div className={'mb-3 text-base text-zinc-400'}>
-                            <Time date={post.date}/> · {post.stats.words} words · {post.stats.text}
+                            <Time date={post.date}/> · {post.stats.words} 字 · 预计阅读 {readMinutes} 分钟
                         </div>
-                        <Suspense fallback={<>Loading...</>}>
+                        <Suspense fallback={<>加载中...</>}>
                             <MDXRemote
                                 source={post.content}
                                 options={{

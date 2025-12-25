@@ -5,11 +5,11 @@
  
 A minimal, responsive, and easy-to-use blog template. 
 
-![next-blog](https://socialify.git.ci/imyuanli/next-blog/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fnext-blog.imyuanli.cn%2F_next%2Fimage%3Furl%3D%252Flogo.png%26w%3D32%26q%3D100&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Auto)
+![next-blog](https://socialify.git.ci/hsn0918/next-blog/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fnext-blog.imyuanli.cn%2F_next%2Fimage%3Furl%3D%252Flogo.png%26w%3D32%26q%3D100&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Auto)
 
 [Perview](https://next-blog.imyuanli.cn/) |
 [Changelog](https://next-blog.imyuanli.cn/blog?tag=Features) |
-![GitHub license](https://img.shields.io/github/license/imyuanli/next-blog)
+![GitHub license](https://img.shields.io/github/license/hsn0918/next-blog)
 
 ## Introduction
 
@@ -29,17 +29,17 @@ Simple and clean, it is designed to place the reader's attention on what really 
 NextBlog can be deployed with Vercel or Netlify, with a single click.
 > PS: 如果你是国内用户的话,我推荐你使用 [Netlify](https://app.netlify.com/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/imyuanli/next-blog)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/hsn0918/next-blog)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/imyuanli/next-blog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hsn0918/next-blog)
 
 Then you can clone the repository and run the following commands:
 
 ```bash
 git clone
 cd next-blog
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
 You only need to modify the configuration file content and write articles.

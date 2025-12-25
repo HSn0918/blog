@@ -30,7 +30,7 @@ const Search = () => {
                         onClick={() => {
                             setOpen(true)
                         }}>
-                    Search Blog...
+                    搜索博客...
                     <div className={'p-1 flex justify-center items-center'}>
                         <Command size={16}/>
                         <span className={'text-base'}>K</span>

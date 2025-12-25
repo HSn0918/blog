@@ -2,7 +2,7 @@
 
 import {Separator} from "@/components/ui/separator";
 import {usePathname, useSearchParams} from "next/navigation";
-import {blogConfig} from "@/blog.config";
+import {blogConfig, pluginConfig} from "@/blog.config";
 import Newsletter from "@/plugins/newsletter";
 
 
@@ -16,18 +16,22 @@ const Title = () => {
     // 如果是博客页面并带有tag参数
     const searchParams = useSearchParams()
     const tag = searchParams.get('tag')
+    const {engine: newsletterEngine} = pluginConfig.newsletter
+
     if (name === 'blog' || tag) {
         return <div className={'container pt-8'}>
             <h1>{tag ? tag : data?.title}</h1>
             {data?.description &&
                 <p className={'text-zinc-600'}>
-                    {tag ? "This is a list of all posts with the tag {tag}." :
+                    {tag ? `标签「${tag}」下的文章列表。` :
                         data?.description}
                 </p>
             }
-            <p>
-                <Newsletter/>
-            </p>
+            {newsletterEngine && (
+                <p>
+                    <Newsletter/>
+                </p>
+            )}
             <Separator/>
         </div>
     }

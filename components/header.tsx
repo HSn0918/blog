@@ -10,21 +10,26 @@ import {
     SheetTrigger
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Separator} from "@/components/ui/separator";
-import {Github, Menu, Moon, Sun} from "lucide-react";
+import {Menu, Moon, Sun} from "lucide-react";
 import {useTheme} from "next-themes";
 import Search from "@/plugins/search";
 
 const Header = () => {
-    const {routes, logo, githubRepo} = blogConfig
+    const {routes, logo} = blogConfig
 
     //高亮导航栏
     const pathname = usePathname()
     const active = routes.find((item: any) => item.value == '/' + pathname.split('/')[1])?.name
 
-    const {theme, setTheme} = useTheme()
+    const {theme, setTheme, resolvedTheme} = useTheme()
     const [open, setOpen] = useState(false)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     return (
         <div className={'w-full sticky top-0 bg-white/80 backdrop-blur-md shadow-sm z-10 min-h-20'}>
@@ -58,7 +63,7 @@ const Header = () => {
                         <Sheet open={open} onOpenChange={() => {
                             setOpen(!open)
                         }}>
-                            <SheetTrigger>
+                            <SheetTrigger asChild>
                                 <Button size={'icon'} variant={'ghost'}>
                                     <Menu size={20}/>
                                 </Button>
@@ -81,20 +86,17 @@ const Header = () => {
                         </Sheet>
                     </div>
                     <Search/>
-                    <Link href={githubRepo}>
-                        <Button size={'icon'} variant={'ghost'}>
-                            <Github size={20}/>
-                        </Button>
-                    </Link>
                     <Button
                         size={'icon'}
                         variant={'ghost'}
                         onClick={() => {
-                            setTheme(theme == 'light' ? 'dark' : 'light')
+                            const current = resolvedTheme ?? theme
+                            setTheme(current == 'light' ? 'dark' : 'light')
                         }}
+                        aria-label={'切换主题'}
                     >
-                        {theme == 'light' && <Sun size={20}/>}
-                        {theme == 'dark' && <Moon size={20}/>}
+                        {mounted && (resolvedTheme ?? theme) == 'light' && <Sun size={20}/>}
+                        {mounted && (resolvedTheme ?? theme) == 'dark' && <Moon size={20}/>}
                     </Button>
                 </div>
             </header>

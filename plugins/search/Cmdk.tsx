@@ -25,11 +25,11 @@ const Cmdk = ({open, setOpen}: any) => {
 
     return (
         <CommandDialog open={open} onOpenChange={setOpen}>
-            <CommandInput placeholder="Type a command or search..."/>
+            <CommandInput placeholder="输入关键词搜索..."/>
             <CommandList className={'space-y-4 max-h-[480px]'}>
-                {loading && <CommandLoading>Fetching data…</CommandLoading>}
-                <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="Blog">
+                {loading && <CommandLoading>正在加载数据...</CommandLoading>}
+                <CommandEmpty>未找到结果。</CommandEmpty>
+                <CommandGroup heading="博客">
                     <div className={'space-y-4'}>
                         {posts.map((post: any) => (
                             <Link href={`/blog/${post?.id}`}>

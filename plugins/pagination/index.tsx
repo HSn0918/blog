@@ -20,7 +20,7 @@ const Pagination = ({allCount, generateHref}: any) => {
                         )}
                     </div>
                     <div>
-                        {page} of {Math.ceil(allCount / pageSize)}
+                        第 {page} / {Math.ceil(allCount / pageSize)} 页
                     </div>
                     <div className={'w-full flex justify-end'}>
                         {Math.ceil(allCount / pageSize) > page && (
@@ -32,7 +32,7 @@ const Pagination = ({allCount, generateHref}: any) => {
             {engine === "loadMore" &&
                 <Link href={generateHref(page + 1)}>
                     <Button variant={"outline"} className={'w-full'}>
-                        Load More ···
+                        加载更多 ···
                     </Button>
                 </Link>
             }

@@ -10,7 +10,7 @@ const Time = ({date}: any) => {
 
     return (
         <time className={'text-base text-zinc-400'}>
-            {dayjs(date).format('MMMM D, YYYY')}
+            {dayjs(date).format('YYYY年M月D日')}
         </time>
     );
 }
