@@ -14,7 +14,6 @@ import {useEffect, useState} from "react";
 import {Separator} from "@/components/ui/separator";
 import {Menu, Moon, Sun} from "lucide-react";
 import {useTheme} from "next-themes";
-import Search from "@/plugins/search";
 
 const Header = () => {
     const {routes, logo} = blogConfig
@@ -85,7 +84,6 @@ const Header = () => {
                             </SheetContent>
                         </Sheet>
                     </div>
-                    <Search/>
                     <Button
                         size={'icon'}
                         variant={'ghost'}
