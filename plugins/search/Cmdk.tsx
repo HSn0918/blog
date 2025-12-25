@@ -25,17 +25,8 @@ const Cmdk = ({open, setOpen}: any) => {
                     setPosts(data.data || [])
                 }
             } catch {
-                try {
-                    const res = await fetch('/api/get_posts')
-                    if (!res.ok) throw new Error('api not available')
-                    const data = await res.json()
-                    if (active) {
-                        setPosts(data.data || [])
-                    }
-                } catch {
-                    if (active) {
-                        setPosts([])
-                    }
+                if (active) {
+                    setPosts([])
                 }
             } finally {
                 if (active) {
