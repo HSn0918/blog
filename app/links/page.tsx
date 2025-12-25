@@ -13,20 +13,29 @@ const Links = () => {
     return (
         <PageContainer>
             {items?.length ? (
-                items.map((item: any, index: number) => (
-                    <div className={'not-prose'} key={index}>
-                        <CardTitle>
-                            <Link className={'underline underline-offset-4'} href={item.href}>
-                                {item.name}
-                            </Link>
-                        </CardTitle>
-                        {item.description && (
-                            <CardDescription className={'text-base'}>
-                                {item.description}
-                            </CardDescription>
-                        )}
-                    </div>
-                ))
+                items.map((item: any, index: number) => {
+                    const label = item.name || item.href
+                    return (
+                        <div className={'not-prose'} key={index}>
+                            <CardTitle>
+                                <Link className={'underline underline-offset-4'} href={item.href}>
+                                    {label}
+                                </Link>
+                            </CardTitle>
+                            {item.description ? (
+                                <CardDescription className={'text-base'}>
+                                    {item.description}
+                                </CardDescription>
+                            ) : (
+                                item.name && item.href && (
+                                    <CardDescription className={'text-base'}>
+                                        {item.href}
+                                    </CardDescription>
+                                )
+                            )}
+                        </div>
+                    )
+                })
             ) : (
                 <div className={'text-base text-zinc-500'}>
                     暂无友链。

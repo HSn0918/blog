@@ -167,11 +167,16 @@ const blogConfig: any = {
   },
 
   // links page config
-  links: {
-    title: "友链",
-    description: "朋友们的站点。",
-    items: [],
-  },
+    links: {
+        title: "友链",
+        description: "朋友们的站点。",
+        items: [
+            {
+                name: "Snow",
+                href: "https://xhblog.top/",
+            },
+        ],
+    },
 
   // about page config
   about: {
@@ -196,16 +201,16 @@ const pluginConfig = {
 
     // giscus doc: https://giscus.app
     giscus: {
-      repo: "hsn0918/next-blog",
-      repoId: "R_kgDOKTZ_kQ",
+      repo: "HSn0918/blog",
+      repoId: "R_kgDOQulrfQ",
       category: "Announcements",
-      categoryId: "DIC_kwDOKTZ_kc4CfMXK",
+      categoryId: "DIC_kwDOQulrfc4C0OW5",
       mapping: "pathname",
       reactionsEnabled: "1",
-      emitMetadata: "0",
+      emitMetadata: "1",
       inputPosition: "top",
-      theme: "light",
-      lang: "en",
+      theme: "preferred_color_scheme",
+      lang: "zh-CN",
       loading: "lazy",
     },
 
