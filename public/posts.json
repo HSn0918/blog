@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "message": "ok",
+  "data": [
+    {
+      "id": "intro-next-blog",
+      "title": "博客测试喵",
+      "date": "2025-12-25T00:00:00.000Z",
+      "summary": "测试喵",
+      "tags": [
+        "测试"
+      ]
+    },
+    {
+      "id": "kubernetes-builder-quick-start",
+      "title": "kubebuilder快速开始",
+      "date": "2025-12-25T00:00:00.000Z",
+      "summary": "kubebuilder",
+      "tags": [
+        "kubebuilder",
+        "kubernetes",
+        "云原生"
+      ]
+    }
+  ]
+}
