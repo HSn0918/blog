@@ -15,12 +15,38 @@ const Cmdk = ({open, setOpen}: any) => {
     const [loading, setLoading] = useState(true)
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        fetch('/api/get_posts')
-            .then((res) => res.json())
-            .then((data) => {
-                setPosts(data.data)
-                setLoading(false)
-            })
+        let active = true
+        const loadPosts = async () => {
+            try {
+                const res = await fetch('/posts.json')
+                if (!res.ok) throw new Error('posts.json not found')
+                const data = await res.json()
+                if (active) {
+                    setPosts(data.data || [])
+                }
+            } catch {
+                try {
+                    const res = await fetch('/api/get_posts')
+                    if (!res.ok) throw new Error('api not available')
+                    const data = await res.json()
+                    if (active) {
+                        setPosts(data.data || [])
+                    }
+                } catch {
+                    if (active) {
+                        setPosts([])
+                    }
+                }
+            } finally {
+                if (active) {
+                    setLoading(false)
+                }
+            }
+        }
+        loadPosts()
+        return () => {
+            active = false
+        }
     }, []);
 
     return (

@@ -22,7 +22,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-posts-json.cjs",
     "build": "next build",
+    "preexport": "node scripts/generate-posts-json.cjs",
     "export": "next build",
     "start": "next start",
     "lint": "next lint"
