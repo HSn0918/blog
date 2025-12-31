@@ -16,7 +16,6 @@ import readingTime from "reading-time";
 import remarkNormalizeHeadings from "remark-normalize-headings";
 import Toc from "@/components/toc";
 import {Button} from "@/components/ui/button";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {TableProperties} from "lucide-react";
 import {
     Drawer,
@@ -72,11 +71,11 @@ export default async function Post({params}: any) {
                             <SideNav/>
                         </div>
                         <Drawer>
-                        <DrawerTrigger asChild>
-                            <Button size={"icon"} variant={"ghost"}>
-                                <TableProperties size={20}/>
-                            </Button>
-                        </DrawerTrigger>
+                            <DrawerTrigger asChild>
+                                <Button size={"icon"} variant={"ghost"}>
+                                    <TableProperties size={20}/>
+                                </Button>
+                            </DrawerTrigger>
                             <DrawerContent>
                                 <DrawerHeader>
                                     <DrawerTitle>
@@ -111,14 +110,6 @@ export default async function Post({params}: any) {
                         <Suspense fallback={<>加载中...</>}>
                             <MDXRemote
                                 source={post.content}
-                                components={{
-                                    Card,
-                                    CardHeader,
-                                    CardTitle,
-                                    CardDescription,
-                                    CardContent,
-                                    CardFooter,
-                                }}
                                 options={{
                                     mdxOptions: {
                                         remarkPlugins: [
