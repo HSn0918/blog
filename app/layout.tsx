@@ -9,7 +9,8 @@ import Title from "@/components/title";
 import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
 import Analytics from "@/plugins/analytics";
-Inter({subsets: ["latin"]});
+
+const inter = Inter({subsets: ["latin"]});
 export const metadata: Metadata = {
     title: blogConfig.title,
     description: blogConfig.description,
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="zh-CN">
-            <body className={'relative min-h-screen font-mono flex flex-col justify-between'}>
+            <body className={`relative min-h-screen ${inter.className} flex flex-col justify-between`}>
             <ProviderTheme>
             <div className={'flex-1'}>
                 <Header/>
