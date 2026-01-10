@@ -4,11 +4,8 @@ const withMDX = require('@next/mdx')()
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  // todo This configuration option will be removed in a future major version.
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
   output: 'export',
+  turbopack: {},
   images: {
     unoptimized: true,
   },

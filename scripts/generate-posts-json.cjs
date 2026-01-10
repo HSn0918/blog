@@ -43,5 +43,13 @@ const writeIndex = (posts) => {
   fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2));
 };
 
-const posts = readPosts();
-writeIndex(posts);
+const generatePostsJson = () => {
+  const posts = readPosts();
+  writeIndex(posts);
+};
+
+module.exports = generatePostsJson;
+
+if (require.main === module) {
+  generatePostsJson();
+}
