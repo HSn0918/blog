@@ -21,12 +21,12 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/next.cjs dev",
     "prebuild": "node scripts/generate-posts-json.cjs",
-    "build": "next build",
+    "build": "node scripts/next.cjs build",
     "preexport": "node scripts/generate-posts-json.cjs",
-    "export": "next build",
-    "start": "next start",
+    "export": "node scripts/next.cjs build",
+    "start": "node scripts/next.cjs start",
     "lint": "next lint"
   },
   "dependencies": {
