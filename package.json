@@ -24,10 +24,8 @@
     "dev": "node scripts/next.cjs dev",
     "prebuild": "node scripts/generate-posts-json.cjs",
     "build": "node scripts/next.cjs build",
-    "postbuild": "node scripts/make-html-aliases.cjs",
     "preexport": "node scripts/generate-posts-json.cjs",
     "export": "node scripts/next.cjs build",
-    "postexport": "node scripts/make-html-aliases.cjs",
     "start": "node scripts/next.cjs start",
     "lint": "next lint"
   },
