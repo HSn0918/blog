@@ -42,9 +42,9 @@ const BlogContent = ({posts}: any) => {
     // 生成分页链接
     const generateHref = (page: number) => {
         if (currentTag) {
-            return `/blog?tag=${currentTag}&page=${page}`
+            return `/blog/?tag=${currentTag}&page=${page}`
         } else {
-            return `/blog?page=${page}`
+            return `/blog/?page=${page}`
         }
     }
 
@@ -57,7 +57,7 @@ const BlogContent = ({posts}: any) => {
                             <Time date={post.date}/>
                         </div>
                         <CardTitle className={'not-prose space-x-4 flex justify-start items-center'}>
-                            <Link className={'hover:underline hover:underline-offset-8'} href={`/blog/${post.id}`}>
+                            <Link className={'hover:underline hover:underline-offset-8'} href={`/blog/${post.id}/`}>
                                 {post.title}
                             </Link>
                             {post.pinned && (
@@ -72,7 +72,7 @@ const BlogContent = ({posts}: any) => {
                             </div>
                             <div className={'space-x-2'}>
                                 {post?.tags?.map((tag: string) => (
-                                    <Link key={tag} href={`/blog?tag=${tag}`}>
+                                    <Link key={tag} href={`/blog/?tag=${tag}`}>
                                         <Badge variant={currentTag == tag ? "secondary" : "outline"}>
                                             #{tag}
                                         </Badge>
@@ -85,7 +85,7 @@ const BlogContent = ({posts}: any) => {
                         {post.summary}
                     </CardDescription>
                     <div className={'flex justify-end'}>
-                        <Link href={`/blog/${post.id}`}>
+                        <Link href={`/blog/${post.id}/`}>
                             <Button>
                                 阅读全文 <ArrowRight size={16} className={'ml-2'}/>
                             </Button>

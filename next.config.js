@@ -1,11 +1,14 @@
 const withMDX = require('@next/mdx')()
 
 /** @type {import('next').NextConfig} */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   output: 'export',
-  turbopack: {},
+  trailingSlash: true,
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
     unoptimized: true,
   },
