@@ -6,7 +6,7 @@ const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   output: 'export',
-  trailingSlash: false,
+  trailingSlash: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
