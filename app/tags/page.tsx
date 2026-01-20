@@ -20,7 +20,7 @@ const Tags = () => {
         <PageContainer>
             <div className={'flex'}>
                 {Object.keys(tags).map((tag: string) => (
-                    <Link key={tag} href={`/blog?tag=${tag}`}>
+                    <Link key={tag} href={`/blog/?tag=${tag}`}>
                         <Button className={'text-lg px-4 underline-offset-8'} size={'lg'} variant={'link'}>
                             <span className={'font-bold'}>{tag}</span>
                             <span className={'text-gray-500'}>({tags[tag]})</span>

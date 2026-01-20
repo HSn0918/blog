@@ -49,7 +49,7 @@ const Cmdk = ({open, setOpen}: any) => {
                 <CommandGroup heading="博客">
                     <div className={'space-y-4'}>
                         {posts.map((post: any) => (
-                            <Link href={`/blog/${post?.id}`}>
+                            <Link key={post?.id} href={`/blog/${post?.id}/`}>
                                 <CommandItem className={'flex flex-col justify-center items-start'}>
                                     <div>
                                         <Time date={post.date}/>
