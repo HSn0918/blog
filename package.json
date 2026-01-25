@@ -25,7 +25,7 @@
     "prebuild": "node scripts/generate-posts-json.cjs",
     "build": "node scripts/next.cjs build",
     "preexport": "node scripts/generate-posts-json.cjs",
-    "export": "node scripts/next.cjs build",
+    "export": "node scripts/next.cjs build && node scripts/fix-export-index.cjs",
     "start": "node scripts/next.cjs start",
     "lint": "next lint"
   },
